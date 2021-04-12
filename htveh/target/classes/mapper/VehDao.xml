@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neayon.ht.dao.VehDao">
+	<select id="fetchVehsByPage" resultType="com.neayon.ht.entity.Veh">
+		<![CDATA[
+		select * from t_veh
+		where 1=1
+		]]>
+		<if test="param != null">
+			<bind name="veh" value="param" />
+			<if test="veh.sn != null and veh.sn != ''">
+				<bind name="sn" value="'%'+veh.sn+'%'" />
+				<![CDATA[ and (sn like #{sn} or sfsn like #{sn} or envsn like #{sn})]]>
+			</if>
+			<if test="veh.plateNumber and veh.plateNumber != ''">
+				<bind name="plateNumber" value="'%'+veh.plateNumber+'%'" />
+				<![CDATA[ and plateNumber like #{plateNumber}]]>
+			</if>
+			<if test="veh.plateType != null and veh.plateType != ''">
+				<![CDATA[ and plateType=#{veh.plateType}]]>
+			</if>
+			<if test="veh.vehType != null and veh.vehType != ''">
+				<![CDATA[ and vehType=#{veh.vehType}]]>
+			</if>
+			<if test="veh.owner != null and veh.owner != ''"><!-- 统一为联系人参数 -->
+				<![CDATA[ and (owner=#{veh.owner} or applicant=#{veh.owner})]]>
+			</if>
+			<if test="veh.ownerContact != null and veh.ownerContact != ''"><!-- 统一为联系方式参数 -->
+				<![CDATA[ and (ownerContact=#{veh.ownerContact} or applicantContact=#{veh.ownerContact})]]>
+			</if>
+			<if test="veh.state != null">
+				<![CDATA[ and state=#{veh.state}]]>
+			</if>
+		</if>
+		<if test="startTime != null">
+			<![CDATA[ and createTime>=#{startTime}]]>
+		</if>
+		<if test="endTime != null">
+			<![CDATA[ and createTime<=#{endTime}]]>
+		</if>
+		<![CDATA[ order by id desc]]>
+		<if test="page">
+			<![CDATA[ limit #{pageStart},#{pageSize}]]>
+		</if>
+	</select>
+	
+	<select id="fetchVehsCountsByParam" resultType="java.lang.Integer">
+		<![CDATA[
+		select count(*) as c from
+		t_veh where 1=1
+		]]>
+		<if test="param != null">
+			<bind name="veh" value="param" />
+			<if test="veh.sn != null and veh.sn != ''">
+				<bind name="sn" value="'%'+veh.sn+'%'" />
+				<![CDATA[ and (sn like #{sn} or sfsn like #{sn} or envsn like #{sn})]]>
+			</if>
+			<if test="veh.plateNumber and veh.plateNumber != ''">
+				<bind name="plateNumber" value="'%'+veh.plateNumber+'%'" />
+				<![CDATA[ and plateNumber like #{plateNumber}]]>
+			</if>
+			<if test="veh.plateType != null and veh.plateType != ''">
+				<![CDATA[ and plateType=#{veh.plateType}]]>
+			</if>
+			<if test="veh.vehType != null and veh.vehType != ''">
+				<![CDATA[ and vehType=#{veh.vehType}]]>
+			</if>
+			<if test="veh.owner != null and veh.owner != ''"><!-- 统一为联系人参数 -->
+				<![CDATA[ and (owner=#{veh.owner} or applicant=#{veh.owner})]]>
+			</if>
+			<if test="veh.ownerContact != null and veh.ownerContact != ''"><!-- 统一为联系方式参数 -->
+				<![CDATA[ and (ownerContact=#{veh.ownerContact} or applicantContact=#{veh.ownerContact})]]>
+			</if>
+			<if test="veh.state != null">
+				<![CDATA[ and state=#{veh.state}]]>
+			</if>
+		</if>
+		<if test="startTime != null">
+			<![CDATA[ and createTime>=#{startTime}]]>
+		</if>
+		<if test="endTime != null">
+			<![CDATA[ and createTime<=#{endTime}]]>
+		</if>
+	</select>
+	
+	<select id="fetchVehBySn" resultType="com.neayon.ht.entity.Veh">
+		<![CDATA[select * from t_veh where sn=#{sn}]]>
+	</select>
+	
+	<update id="updateVeh">
+		<![CDATA[
+		update t_veh set
+			safetyInspects=#{safetyInspects},
+			safetyStart=#{safetyStart},
+			externalInspector=#{externalInspector},
+			externalStart=#{externalStart},
+			externalEnd=#{externalEnd},
+			chassisInspector=#{chassisInspector},
+			chassisStart=#{chassisStart},
+			chassisEnd=#{chassisEnd},
+			dynamicInspector=#{dynamicInspector},
+			dynamicStart=#{dynamicStart},
+			dynamicEnd=#{dynamicEnd},
+			guide=#{guide},
+			guideStart=#{guideStart},
+			guideEnd=#{guideEnd},
+			safetyEnd=#{safetyEnd},
+			frequencySafety=#{frequencySafety},
+			conclusionSafety=#{conclusionSafety},
+			stateSafety=#{stateSafety},
+			envInspector=#{envInspector},
+			envInspects=#{envInspects},
+			envStart=#{envStart},
+			envEnd=#{envEnd},
+			frequencyEnv=#{frequencyEnv},
+			conclusionEnv=#{conclusionEnv},
+			stateEnv=#{stateEnv},
+			state=#{state},
+			updateUser=#{updateUser},
+			updateTime=CURRENT_TIMESTAMP
+		where id=#{id}
+		]]>
+	</update>
+	
+	<select id="fetchVehBySfsn" resultType="com.neayon.ht.entity.Veh">
+		<![CDATA[select * from t_veh where sfsn=#{sfsn}]]>
+	</select>
+	
+	<select id="fetchVehByEnvsn" resultType="com.neayon.ht.entity.Veh">
+		<![CDATA[select * from t_veh where envsn=#{envsn}]]>
+	</select>
+	
+	<select id="fetchUniqueVeh" resultType="com.neayon.ht.entity.Veh">
+		<![CDATA[select * from t_veh where plateNumber=#{plateNumber} and plateType=#{plateType}]]>
+		<if test="vin != null and vin != ''">
+			<![CDATA[ and vin=#{vin}]]>
+		</if>
+		<![CDATA[ and state!=6 and state!=5]]>
+	</select>
+	
+	<insert id="saveNewVeh">
+		<![CDATA[
+		insert into t_veh
+			(sn,sfsn,envsn,plateNumber,plateType,vehType,owner,ownerContact,applicant,applicantContact,
+			safetyInspects,guide,guideStart,frequencySafety,stateSafety,envInspector,envInspects,envStart,
+			frequencyEnv,stateEnv,createUser)
+		values
+			(#{sn},#{sfsn},#{envsn},#{plateNumber},#{plateType},#{vehType},#{owner},#{ownerContact},#{applicant},#{applicantContact},
+			#{safetyInspects},#{guide},#{guideStart},#{frequencySafety},#{stateSafety},#{envInspector},#{envInspects},#{envStart},
+			#{frequencyEnv},#{stateEnv},#{createUser})
+		]]>
+	</insert>
+</mapper>

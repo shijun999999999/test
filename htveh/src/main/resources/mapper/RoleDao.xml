@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neayon.ht.dao.RoleDao">
+	<select id="getRoleById" resultType="com.neayon.ht.entity.Role">
+		<![CDATA[select * from t_role where id=#{id}]]>
+	</select>
+	
+	<select id="getRoles" resultType="com.neayon.ht.entity.Role">
+		<![CDATA[select * from t_role order by id]]>
+	</select>
+	
+	<select id="getRoleAuths" resultType="com.neayon.ht.entity.RoleAuth">
+		<![CDATA[select * from t_role_auth where state=true order by id]]>
+	</select>
+	
+	<insert id="addRole">
+		<![CDATA[
+		insert into t_role 
+			(roleName,roleDesc,functionPoint,state,createUser) 
+		values 
+			(#{roleName},#{roleDesc},#{functionPoint},true,#{createUser})
+		]]>
+	</insert>
+	
+	<update id="updateRole">
+		<![CDATA[
+		update t_role set functionPoint=#{functionPoint},state=#{state},updateTime=CURRENT_TIMESTAMP,updateUser=#{updateUser}
+		]]>
+		<if test="roleName != null and roleName != ''">
+			<![CDATA[,roleName=#{roleName}]]>
+		</if>
+		<if test="roleDesc != null and roleDesc != ''">
+			<![CDATA[,roleDesc=#{roleDesc}]]>
+		</if>
+		<![CDATA[ where id=#{id}]]>
+	</update>
+	
+	<delete id="delRole">
+		<![CDATA[delete from t_role where id=#{roleId}]]>
+	</delete>
+</mapper>

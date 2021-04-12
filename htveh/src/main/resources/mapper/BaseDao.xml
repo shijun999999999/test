@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neayon.ht.dao.BaseDao">
+	<resultMap type="com.neayon.ht.entity.Base" id="baseMap">
+		<result property="name" column="bname" />
+		<result property="value" column="bvalue" />
+	</resultMap>
+	
+	<select id="fetchBaseParams" resultMap="baseMap">
+		<![CDATA[select * from t_base where state=true]]>
+		<if test="type != null and type != ''">
+			<![CDATA[ and type=#{type}]]>
+		</if>
+		<![CDATA[ order by id]]>
+	</select>
+	
+	<select id="fetchBaseParam" resultMap="baseMap">
+		<![CDATA[select * from t_base where type=#{type} and memo=#{memo} order by id limit 1]]>
+	</select>
+</mapper>

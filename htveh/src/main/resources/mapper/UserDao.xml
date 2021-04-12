@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neayon.ht.dao.UserDao">
+	<select id="login" resultType="com.neayon.ht.entity.User">
+		<![CDATA[select * from t_user where username=#{username} and password=#{password}]]>
+	</select>
+	
+	<select id="fetchUserById" resultType="com.neayon.ht.entity.User">
+		<![CDATA[select * from t_user where id=#{userId}]]>
+	</select>
+	
+	<select id="fetchUsersByPage" resultType="com.neayon.ht.entity.User">
+		<![CDATA[
+		select id,username,role,cardNo,drivingLicense,drivingModel,drivingStart,drivingEnd,createTime,updateTime from t_user
+		where 1=1
+		]]>
+		<if test="param != null">
+			<bind name="user" value="param"></bind>
+			<if test="user.username != null and user.username != ''">
+				<bind name="namelike" value="'%'+user.username+'%'"></bind>
+				<![CDATA[ and username like #{namelike}]]>
+			</if>
+			<if test="user.role != null">
+				<![CDATA[ and role=#{user.role}]]>
+			</if>
+		</if>
+		<if test="startTime != null">
+			<![CDATA[ and createTime>=#{startTime}]]>
+		</if>
+		<if test="endTime != null">
+			<![CDATA[ and createTime<=#{endTime}]]>
+		</if>
+		<![CDATA[ order by role,id]]>
+		<if test="page">
+			<![CDATA[ limit #{pageStart},#{pageSize}]]>
+		</if>
+	</select>
+	
+	<select id="fetchUsersCountsByParam" resultType="java.lang.Integer">
+		<![CDATA[
+		select count(*) from t_user
+		where 1=1
+		]]>
+		<if test="param != null">
+			<bind name="user" value="param"></bind>
+			<if test="user.username != null and user.username != ''">
+				<bind name="namelike" value="'%'+user.username+'%'"></bind>
+				<![CDATA[ and username like #{namelike}]]>
+			</if>
+			<if test="user.role != null">
+				<![CDATA[ and role=#{user.role}]]>
+			</if>
+		</if>
+		<if test="startTime != null">
+			<![CDATA[ and createTime>=#{startTime}]]>
+		</if>
+		<if test="endTime != null">
+			<![CDATA[ and createTime<=#{endTime}]]>
+		</if>
+	</select>
+	
+	<insert id="insert">
+		<![CDATA[
+		insert into t_user
+			(username,password,role,validate,cardNo,drivingLicense,drivingModel,drivingStart,drivingEnd)
+		values
+			(#{username},#{password},#{role},#{validate},#{cardNo},#{drivingLicense},#{drivingModel},#{drivingStart},#{drivingEnd})
+		]]>
+	</insert>
+	
+	<update id="update">
+		<![CDATA[
+		update t_user set 
+		updateTime=CURRENT_TIMESTAMP
+		]]>
+		<if test="username != null and username != ''">
+			<![CDATA[,username=#{username}]]>
+		</if>
+		<if test="password != null and password != ''">
+			<![CDATA[,password=#{password}]]>
+		</if>
+		<if test="role != null">
+			<![CDATA[,role=#{role}]]>
+		</if>
+		<if test="validate != null and validate != ''">
+			<![CDATA[,validate=#{validate}]]>
+		</if>
+		<if test="cardNo != null and cardNo != ''">
+			<![CDATA[,cardNo=#{cardNo}]]>
+		</if>
+		<if test="drivingLicense != null and drivingLicense != ''">
+			<![CDATA[,drivingLicense=#{drivingLicense}]]>
+		</if>
+		<if test="drivingModel != null and drivingModel != ''">
+			<![CDATA[,drivingModel=#{drivingModel}]]>
+		</if>
+		<if test="drivingStart != null and drivingStart != ''">
+			<![CDATA[,drivingStart=#{drivingStart}]]>
+		</if>
+		<if test="drivingEnd != null and drivingEnd != ''">
+			<![CDATA[,drivingEnd=#{drivingEnd}]]>
+		</if>
+		<![CDATA[ where id=#{id}]]>
+	</update>
+	
+	<delete id="delete">
+		<![CDATA[delete from t_user where id=#{userId}]]>
+	</delete>
+	
+	<select id="fetchUserByCard" resultType="com.neayon.ht.entity.User">
+		<![CDATA[select * from t_user where cardNo=#{cardNo}]]>
+	</select>
+</mapper>

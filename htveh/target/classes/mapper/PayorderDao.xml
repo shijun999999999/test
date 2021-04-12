@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.neayon.ht.dao.PayorderDao">
+	<insert id="savePayorder">
+		<![CDATA[
+		insert into t_pay_order
+			(sn,orderSn,inspectsOriginal,feeOriginal,inspectsActual,feeActual,discount,discountRemark,createUser)
+		values
+			(#{sn},#{orderSn},#{inspectsOriginal},#{feeOriginal},#{inspectsActual},#{feeActual},#{discount},#{discountRemark},#{createUser})
+		]]>
+	</insert>
+	
+	<select id="fetchPayorder" resultType="com.neayon.ht.entity.Payorder">
+		<![CDATA[select * from t_pay_order where sn=#{sn}]]>
+	</select>
+	
+	<update id="updatePayorder">
+		<![CDATA[
+		update t_pay_order set
+			confirmUser=#{confirmUser},
+			issueUser=#{issueUser},
+			state=#{state},
+			updateTime=CURRENT_TIMESTAMP
+		where id=#{id}
+		]]>
+	</update>
+</mapper>

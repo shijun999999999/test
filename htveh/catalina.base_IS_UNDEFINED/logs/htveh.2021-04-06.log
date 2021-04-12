@@ -1,0 +1,135 @@
+1075 [main] INFO  com.neayon.ht.Starter - Starting Starter on kamiyj-pc with PID 14228 (D:\workspace\htveh\target\classes started by kamiyj in D:\workspace\htveh)
+1150 [main] INFO  com.neayon.ht.Starter - The following profiles are active: test
+1283 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b45dcb8: startup date [Tue Apr 06 09:18:57 CST 2021]; root of context hierarchy
+2885 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+4028 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2bf53fee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4101 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.neayon.ht.config.RedisConfig$$EnhancerBySpringCGLIB$$553c18f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+5737 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+5777 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+5808 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+5808 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+5833 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+5834 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+5834 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+5846 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+6094 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/htveh] - Initializing Spring embedded WebApplicationContext
+6095 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4812 ms
+6316 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+6325 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+6326 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+6327 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+6327 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+6327 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'UserFilter' to urls: [/*]
+6327 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsfilter' to: [/*]
+8433 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+9010 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b45dcb8: startup date [Tue Apr 06 09:18:57 CST 2021]; root of context hierarchy
+9161 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/getVeh],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.getVeh(java.lang.String)
+9163 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/issue],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.issue(java.lang.String)
+9163 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/afPay],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.afay(java.lang.String)
+9163 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/getPayorder],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.getPayorder(java.lang.String)
+9165 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/confirmPay],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.confirmPay(java.lang.String)
+9165 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/vehList],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.vehList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,com.neayon.ht.entity.Veh)
+9165 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/doPayorder],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.doPayorder(java.lang.String,java.lang.String)
+9170 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/menu/getBases],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.MenusController.getBases(java.lang.String)
+9171 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/menu/getMenus],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.MenusController.getMenus()
+9172 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/roles],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.RoleController.roles()
+9172 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/roleAuths],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.RoleController.roleAuths()
+9176 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/addUser],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.addUser(com.neayon.ht.entity.User)
+9177 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/login.nc],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.login(java.lang.String,java.lang.String)
+9178 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/deleteUser],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.deleteUser(java.lang.Integer)
+9179 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/getUser],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.getUser()
+9179 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/users],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.users(int,int,java.lang.String,java.lang.String,com.neayon.ht.entity.User)
+9179 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/logout],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.logout()
+9180 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/updateUser],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.updateUser(com.neayon.ht.entity.User)
+9184 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+9186 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+9258 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+9259 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+10088 [main] INFO  o.s.w.s.v.f.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+10403 [main] INFO  o.s.w.s.s.s.ServerEndpointExporter - Registering @ServerEndpoint class: class com.neayon.ht.socket.WebSocketServer
+10436 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+10438 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+10445 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+10464 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+10492 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+10538 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8084 (http) with context path '/htveh'
+10547 [main] INFO  com.neayon.ht.Starter - Started Starter in 10.686 seconds (JVM running for 11.741)
+27149 [http-nio-8084-exec-1] INFO  o.a.c.c.C.[.[localhost].[/htveh] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+27150 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+27183 [http-nio-8084-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+27927 [http-nio-8084-exec-3] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+28874 [http-nio-8084-exec-3] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+28877 [http-nio-8084-exec-3] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+29752 [http-nio-8084-exec-8] INFO  c.neayon.ht.socket.WebSocketServer - 新建socket连接，1
+1130 [main] INFO  com.neayon.ht.Starter - Starting Starter on kamiyj-pc with PID 35180 (D:\workspace\htveh\target\classes started by kamiyj in D:\workspace\htveh)
+1137 [main] INFO  com.neayon.ht.Starter - The following profiles are active: test
+1297 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@56f0cc85: startup date [Tue Apr 06 09:54:49 CST 2021]; root of context hierarchy
+2878 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+4332 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$118929c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4475 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.neayon.ht.config.RedisConfig$$EnhancerBySpringCGLIB$$3ad002cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+6063 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8084 (http)
+6093 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+6113 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+6113 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.34
+6130 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+6131 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+6131 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+6145 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+6420 [localhost-startStop-1] INFO  o.a.c.c.C.[.[localhost].[/htveh] - Initializing Spring embedded WebApplicationContext
+6421 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5123 ms
+6675 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+6682 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+6683 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+6683 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+6683 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+6683 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'UserFilter' to urls: [/*]
+6683 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'corsfilter' to: [/*]
+8558 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+9198 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@56f0cc85: startup date [Tue Apr 06 09:54:49 CST 2021]; root of context hierarchy
+9336 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/afPay],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.afay(java.lang.String)
+9338 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/vehList],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.vehList(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,com.neayon.ht.entity.Veh)
+9339 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/getVeh],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.getVeh(java.lang.String)
+9340 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/confirmPay],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.confirmPay(java.lang.String)
+9340 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/doPayorder],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.doPayorder(java.lang.String,java.lang.String)
+9341 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/issue],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.issue(java.lang.String)
+9342 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/business/getPayorder],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.BusinessController.getPayorder(java.lang.String)
+9346 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/menu/getBases],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.MenusController.getBases(java.lang.String)
+9347 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/menu/getMenus],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.MenusController.getMenus()
+9348 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/addRole],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.RoleController.addRole(com.neayon.ht.entity.Role)
+9350 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/roles],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.RoleController.roles()
+9350 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/roleAuths],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.RoleController.roleAuths()
+9352 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/role/updateRole],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.RoleController.updateRole(com.neayon.ht.entity.Role)
+9354 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/addUser],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.addUser(com.neayon.ht.entity.User)
+9355 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/login.nc],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.login(java.lang.String,java.lang.String)
+9356 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/getUser],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.getUser()
+9357 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/users],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.users(int,int,java.lang.String,java.lang.String,com.neayon.ht.entity.User)
+9357 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/deleteUser],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.deleteUser(java.lang.Integer)
+9358 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/updateUser],methods=[POST]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.updateUser(com.neayon.ht.entity.User)
+9358 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/user/logout],methods=[GET]}" onto public com.neayon.ht.bean.Message com.neayon.ht.controller.UserController.logout()
+9362 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+9363 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+9431 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+9432 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+10267 [main] INFO  o.s.w.s.v.f.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+10621 [main] INFO  o.s.w.s.s.s.ServerEndpointExporter - Registering @ServerEndpoint class: class com.neayon.ht.socket.WebSocketServer
+10655 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+10658 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+10667 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+10689 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+10725 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+10792 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8084 (http) with context path '/htveh'
+10800 [main] INFO  com.neayon.ht.Starter - Started Starter in 10.911 seconds (JVM running for 11.793)
+21946 [http-nio-8084-exec-2] INFO  o.a.c.c.C.[.[localhost].[/htveh] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+21947 [http-nio-8084-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+22017 [http-nio-8084-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 70 ms
+22339 [http-nio-8084-exec-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+22344 [http-nio-8084-exec-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+23962 [http-nio-8084-exec-1] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+27692 [http-nio-8084-exec-9] INFO  c.neayon.ht.socket.WebSocketServer - 新建socket连接，1
+35443 [http-nio-8084-exec-1] INFO  c.neayon.ht.socket.WebSocketServer - 断开连接，1
+36859 [http-nio-8084-exec-9] INFO  c.neayon.ht.socket.WebSocketServer - 新建socket连接，1
+452746 [http-nio-8084-exec-6] INFO  c.neayon.ht.socket.WebSocketServer - 断开连接，1
+453924 [http-nio-8084-exec-3] INFO  c.neayon.ht.socket.WebSocketServer - 新建socket连接，1
+2431995 [http-nio-8084-exec-1] INFO  c.neayon.ht.socket.WebSocketServer - 推送群发消息：{"from":1,"to":"ALL","message":"SOKEY$1;1100.00"}
+2690522 [http-nio-8084-exec-4] INFO  c.neayon.ht.socket.WebSocketServer - 推送群发消息：{"from":1,"to":"ALL","message":"SOKEY$1;1200.00"}
+2742512 [http-nio-8084-exec-5] INFO  c.neayon.ht.socket.WebSocketServer - 推送群发消息：{"from":1,"to":"ALL","message":"SOKEY$1;1000.00"}
